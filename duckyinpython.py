@@ -111,6 +111,7 @@ button_a = digitalio.DigitalInOut(BUTTON_A)
 button_a.direction = digitalio.Direction.INPUT
 button_a.pull = digitalio.Pull.DOWN
 progStatus = button_a.value
+defaultDelay = 0
 
 def runScript(file):
     global defaultDelay
