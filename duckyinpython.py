@@ -107,10 +107,10 @@ time.sleep(.5)
 # check GP0 for setup mode
 # see setup mode for instructions
 progStatus = False
-progStatusPin = digitalio.DigitalInOut(GP0)
-progStatusPin.switch_to_input(pull=digitalio.Pull.UP)
-progStatus = not progStatusPin.value
-defaultDelay = 0
+button_a = digitalio.DigitalInOut(BUTTON_A)
+button_a.direction = digitalio.Direction.INPUT
+button_a.pull = digitalio.Pull.DOWN
+progStatus = button_a.value
 
 def runScript(file):
     global defaultDelay
